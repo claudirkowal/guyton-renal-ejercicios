@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fisiología Renal — Guyton Cap. 25-28</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+    background: linear-gradient(135deg, #eef2f7 0%, #d9e4f0 100%);
+    color: #1f2d3d;
+    line-height: 1.6;
+    padding: 24px 16px;
+  }
+
+  .container {
+    max-width: 940px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 10px 34px rgba(20, 84, 138, 0.12);
+    padding: 42px 46px;
+  }
+
+  header {
+    text-align: center;
+    padding-bottom: 24px;
+    border-bottom: 3px solid #2a7ab8;
+    margin-bottom: 24px;
+  }
+  header h1 { color: #14548a; font-size: 1.95rem; margin-bottom: 6px; }
+  header .subtitle { color: #5a6b7d; font-size: 1.05rem; font-style: italic; }
+
+  .instructions {
+    background: #f0f7ff;
+    border-left: 5px solid #2a7ab8;
+    padding: 18px 22px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    font-size: 0.94rem;
+    color: #3a4a5c;
+  }
+
+  h2.chapter {
+    color: #ffffff;
+    background: linear-gradient(90deg, #14548a, #2a7ab8);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    margin: 42px 0 22px 0;
+    letter-spacing: 0.4px;
+  }
+
+  h3.section {
+    color: #14548a;
+    font-size: 1.05rem;
+    margin: 26px 0 14px 0;
+    padding-left: 12px;
+    border-left: 4px solid #2a7ab8;
+  }
+
+  .question {
+    background: #fafcff;
+    border: 1px solid #d8e3ee;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 14px;
+    transition: box-shadow 0.2s ease;
+  }
+  .question:hover { box-shadow: 0 5px 16px rgba(42, 122, 184, 0.10); }
+
+  .question .stem {
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: #1f2d3d;
+    font-size: 0.98rem;
+  }
+  .question .stem .num {
+    display: inline-block;
+    background: #2a7ab8;
+    color: #fff;
+    font-size: 0.78rem;
+    padding: 2px 9px;
+    border-radius: 20px;
+    margin-right: 8px;
+    font-weight: 700;
+  }
+
+  .options { display: flex; flex-direction: column; gap: 5px; }
+
+  .options label {
+    display: block;
+    padding: 9px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.94rem;
+    transition: background 0.15s ease;
+    border: 1px solid transparent;
+  }
+  .options label:hover { background: #eaf3fb; }
+  .options input[type="radio"] { margin-right: 8px; accent-color: #2a7ab8; }
+
+  .options label.correct {
+    background: #d9f4e2;
+    border-color: #22a85c;
+    color: #145b34;
+    font-weight: 600;
+  }
+  .options label.incorrect {
+    background: #fbe2e2;
+    border-color: #d84040;
+    color: #8a1c1c;
+  }
+
+  .explanation {
+    display: none;
+    margin-top: 14px;
+    padding: 14px 18px;
+    background: #fff8e6;
+    border-left: 5px solid #e8a33d;
+    border-radius: 6px;
+    font-size: 0.92rem;
+    color: #5a4520;
+    animation: fadeIn 0.35s ease;
+  }
+  .explanation.show { display: block; }
+  .explanation strong { color: #b37616; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ---------- COMPLETAR PALABRAS ---------- */
+  .fill {
+    background: #f6fbf7;
+    border: 1px solid #cfe6d5;
+    border-left: 5px solid #3ba55c;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 14px;
+    transition: box-shadow 0.2s ease;
+  }
+  .fill:hover { box-shadow: 0 5px 16px rgba(59, 165, 92, 0.12); }
+
+  .fill .stem {
+    font-size: 0.97rem;
+    margin-bottom: 14px;
+    color: #1f2d3d;
+    line-height: 2.1;
+  }
+  .fill .stem .num {
+    display: inline-block;
+    background: #3ba55c;
+    color: #fff;
+    font-size: 0.78rem;
+    padding: 2px 9px;
+    border-radius: 20px;
+    margin-right: 8px;
+    font-weight: 700;
+  }
+
+  .fill input[type="text"] {
+    border: none;
+    border-bottom: 2px solid #3ba55c;
+    background: transparent;
+    padding: 4px 8px;
+    font-size: 0.95rem;
+    outline: none;
+    color: #14548a;
+    min-width: 150px;
+    font-family: inherit;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.2s ease;
+  }
+  .fill input[type="text"]:focus {
+    border-bottom-color: #14548a;
+    background: #eaf3fb;
+    border-radius: 4px 4px 0 0;
+  }
+  .fill input.correct {
+    border-bottom-color: #22a85c;
+    background: #d9f4e2;
+    color: #145b34;
+    border-radius: 4px 4px 0 0;
+  }
+  .fill input.incorrect {
+    border-bottom-color: #d84040;
+    background: #fbe2e2;
+    color: #8a1c1c;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .fill-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  .btn-check {
+    background: #3ba55c;
+    color: #fff;
+    border: none;
+    padding: 7px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: background 0.15s ease;
+    font-family: inherit;
+  }
+  .btn-check:hover { background: #2e8849; }
+
+  .btn-reveal {
+    background: #e8a33d;
+    color: #fff;
+    border: none;
+    padding: 7px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: background 0.15s ease;
+    font-family: inherit;
+  }
+  .btn-reveal:hover { background: #c8872a; }
+
+  .fill .explanation {
+    background: #fff8e6;
+    border-left: 5px solid #e8a33d;
+    color: #5a4520;
+  }
+
+  .case {
+    background: #fff9f0;
+    border: 1px solid #f0d9b5;
+    border-left: 5px solid #e8a33d;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+  }
+  .case h4 {
+    color: #b37616;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  .case p { margin-bottom: 12px; font-size: 0.94rem; }
+  .case .options label:hover { background: #fdf1dc; }
+  .case .options label.correct { background: #d9f4e2; border-color: #22a85c; }
+  .case .options label.incorrect { background: #fbe2e2; border-color: #d84040; }
+
+  footer {
+    text-align: center;
+    margin-top: 42px;
+    padding-top: 20px;
+    border-top: 1px solid #d8e3ee;
+    color: #7a8a9c;
+    font-size: 0.82rem;
+  }
+
+  @media (max-width: 620px) {
+    .container { padding: 22px; }
+    header h1 { font-size: 1.35rem; }
+    .question, .case, .fill { padding: 16px 18px; }
+    .fill input[type="text"] { min-width: 110px; font-size: 0.88rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>Fisiología Renal — Guyton y Hall</h1>
+  <p class="subtitle">Ejercicios integradores · Capítulos 25 al 28</p>
+</header>
+
+<div class="instructions">
+  <strong>Instrucciones:</strong> Este ejercicio tiene tres tipos de preguntas:
+  <br>• <strong>Opción múltiple:</strong> haga clic en la alternativa correcta. La explicación aparece abajo.
+  <br>• <strong>Completar palabras:</strong> escriba la palabra o frase que falta y presione <em>Verificar</em>. Si no sabe, use <em>Mostrar respuesta</em>.
+  <br>• <strong>Casos clínicos:</strong> aplicación integradora de los cuatro capítulos.
+</div>
+
+<!-- ===================================================================== -->
+<!-- CAPÍTULO 25 -->
+<!-- ===================================================================== -->
+<h2 class="chapter">Capítulo 25 — Compartimentos de líquidos corporales y edema</h2>
+
+<h3 class="section">Opción múltiple</h3>
+
+<div class="question" data-correct="c">
+  <p class="stem"><span class="num">1</span>¿Qué porcentaje del peso corporal representa el agua corporal total en un adulto promedio?</p>
+  <div class="options">
+    <label><input type="radio" name="q1" value="a"> a) 20%</label>
+    <label><input type="radio" name="q1" value="b"> b) 40%</label>
+    <label><input type="radio" name="q1" value="c"> c) 60%</label>
+    <label><input type="radio" name="q1" value="d"> d) 80%</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: c) 60%.</strong> El agua corporal total corresponde a ~60% del peso en un
+    varón adulto (50% en mujeres y hasta 75% en recién nacidos). Se divide en líquido intracelular
+    (≈40%) y extracelular (≈20%, compuesto por intersticial ≈15% y plasma ≈5%).
+  </div>
+</div>
+
+<div class="question" data-correct="d">
+  <p class="stem"><span class="num">2</span>¿Cuál es el principal catión del líquido extracelular?</p>
+  <div class="options">
+    <label><input type="radio" name="q2" value="a"> a) Potasio</label>
+    <label><input type="radio" name="q2" value="b"> b) Calcio</label>
+    <label><input type="radio" name="q2" value="c"> c) Magnesio</label>
+    <label><input type="radio" name="q2" value="d"> d) Sodio</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: d) Sodio.</strong> El Na⁺ es el catión dominante del LEC (~142 mEq/L). Su
+    concentración es mantenida por la bomba Na⁺/K⁺-ATPasa, que lo expulsa de la célula hacia el
+    intersticio. Es determinante de la osmolaridad plasmática y del volumen extracelular.
+  </div>
+</div>
+
+<div class="question" data-correct="a">
+  <p class="stem"><span class="num">3</span>¿Cuál es el principal catión del líquido intracelular?</p>
+  <div class="options">
+    <label><input type="radio" name="q3" value="a"> a) Potasio</label>
+    <label><input type="radio" name="q3" value="b"> b) Sodio</label>
+    <label><input type="radio" name="q3" value="c"> c) Calcio</label>
+    <label><input type="radio" name="q3" value="d"> d) Cloro</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: a) Potasio.</strong> El K⁺ es el catión predominante del líquido
+    intracelular (~140 mEq/L frente a ~4 mEq/L en el LEC). Este gradiente, mantenido por la
+    Na⁺/K⁺-ATPasa, es esencial para el potencial de membrana en reposo de las células
+    excitables.
+  </div>
+</div>
+
+<div class="question" data-correct="b">
+  <p class="stem"><span class="num">4</span>Una solución de NaCl al 0,9% se considera:</p>
+  <div class="options">
+    <label><input type="radio" name="q4" value="a"> a) Hipotónica</label>
+    <label><input type="radio" name="q4" value="b"> b) Isotónica</label>
+    <label><input type="radio" name="q4" value="c"> c) Hipertónica</label>
+    <label><input type="radio" name="q4" value="d"> d) Coloidal</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: b) Isotónica.</strong> El suero fisiológico (NaCl 0,9%) tiene una
+    osmolaridad de ~300 mOsm/L, prácticamente idéntica al plasma. Por ello no induce movimientos
+    netos de agua entre compartimentos; solo expande el volumen extracelular.
+  </div>
+</div>
+
+<div class="question" data-correct="c">
+  <p class="stem"><span class="num">5</span>Un paciente recibe una infusión de solución salina hipertónica. ¿Qué efecto esperaría sobre los compartimentos?</p>
+  <div class="options">
+    <label><input type="radio" name="q5" value="a"> a) Aumento del volumen intracelular</label>
+    <label><input type="radio" name="q5" value="b"> b) Disminución del volumen extracelular</label>
+    <label><input type="radio" name="q5" value="c"> c) Aumento del volumen extracelular con disminución del intracelular</label>
+    <label><input type="radio" name="q5" value="d"> d) No hay cambios en ningún compartimento</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: c).</strong> Al ser hipertónica, la solución eleva la osmolaridad del LEC,
+    lo que provoca salida de agua desde las células hacia el intersticio (ósmosis). El resultado
+    es expansión del LEC y deshidratación celular relativa.
+  </div>
+</div>
+
+<div class="question" data-correct="a">
+  <p class="stem"><span class="num">6</span>En la insuficiencia cardíaca congestiva, ¿cuál es el mecanismo principal del edema?</p>
+  <div class="options">
+    <label><input type="radio" name="q6" value="a"> a) Aumento de la presión hidrostática venosa capilar</label>
+    <label><input type="radio" name="q6" value="b"> b) Disminución de la presión coloidosmótica plasmática</label>
+    <label><input type="radio" name="q6" value="c"> c) Obstrucción linfática</label>
+    <label><input type="radio" name="q6" value="d"> d) Aumento de la permeabilidad capilar</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: a).</strong> La insuficiencia cardíaca reduce el gasto cardíaco y produce
+    congestión venosa sistémica, elevando la presión hidrostática capilar. Esto, junto a la
+    activación del sistema renina-angiotensina-aldosterona (que retiene Na⁺ y agua), genera
+    edema generalizado.
+  </div>
+</div>
+
+<div class="question" data-correct="b">
+  <p class="stem"><span class="num">7</span>En el síndrome nefrótico, ¿cuál es el mecanismo fisiopatológico central del edema?</p>
+  <div class="options">
+    <label><input type="radio" name="q7" value="a"> a) Aumento de la presión hidrostática capilar</label>
+    <label><input type="radio" name="q7" value="b"> b) Hipoalbuminemia con descenso de la presión coloidosmótica</label>
+    <label><input type="radio" name="q7" value="c"> c) Obstrucción linfática por fibrosis</label>
+    <label><input type="radio" name="q7" value="d"> d) Aumento de la secreción de ADH exclusivamente</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: b).</strong> La proteinuria masiva (&gt;3,5 g/día) provoca hipoalbuminemia.
+    Al caer la presión coloidosmótica plasmática, el líquido abandona el capilar hacia el
+    intersticio, generando edema generalizado —incluido el periorbitario matutino, típico del
+    síndrome nefrótico.
+  </div>
+</div>
+
+<div class="question" data-correct="d">
+  <p class="stem"><span class="num">8</span>En la ecuación de Starling, ¿qué fuerza favorece la filtración capilar?</p>
+  <div class="options">
+    <label><input type="radio" name="q8" value="a"> a) Presión coloidosmótica del plasma</label>
+    <label><input type="radio" name="q8" value="b"> b) Presión oncótica intersticial</label>
+    <label><input type="radio" name="q8" value="c"> c) Presión hidrostática intersticial</label>
+    <label><input type="radio" name="q8" value="d"> d) Presión hidrostática capilar</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: d).</strong> La presión hidrostática capilar empuja el líquido hacia el
+    intersticio (filtración). Se oponen la presión coloidosmótica plasmática (que retiene agua)
+    y la presión hidrostática intersticial. La presión oncótica intersticial favorece la
+    filtración, pero es pequeña.
+  </div>
+</div>
+
+<div class="question" data-correct="c">
+  <p class="stem"><span class="num">9</span>¿Cuál de las siguientes situaciones produce edema por obstrucción linfática?</p>
+  <div class="options">
+    <label><input type="radio" name="q9" value="a"> a) Insuficiencia cardíaca izquierda</label>
+    <label><input type="radio" name="q9" value="b"> b) Cirrosis hepática</label>
+    <label><input type="radio" name="q9" value="c"> c) Filariasis (elefantiasis)</label>
+    <label><input type="radio" name="q9" value="d"> d) Síndrome nefrótico</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: c).</strong> La filariasis linfática obstruye los vasos linfáticos,
+    impidiendo el retorno del líquido intersticial y de las proteínas filtradas, lo que produce
+    edema crónico (linfedema) con aspecto de "elefantiasis".
+  </div>
+</div>
+
+<h3 class="section">Completar palabras</h3>
+
+<div class="fill" data-answers="intracelular|intracelular (lic)|lic">
+  <p class="stem"><span class="num">C1</span>El agua corporal total se distribuye en dos grandes compartimentos: el líquido <input type="text" placeholder="..."> (≈40% del peso) y el líquido <input type="text" placeholder="..."> (≈20% del peso).</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuestas: intracelular / extracelular.</strong> El líquido intracelular (LIC)
+    constituye ~40% del peso corporal y el líquido extracelular (LEC) ~20%. El LEC se subdivide
+    en intersticial (~15%) y plasmático (~5%).
+  </div>
+</div>
+
+<div class="fill" data-answers="albumina|albúmina|la albumina|la albúmina">
+  <p class="stem"><span class="num">C2</span>La proteína plasmática que más contribuye a la presión coloidosmótica es la <input type="text" placeholder="...">.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: albúmina.</strong> La albúmina representa ~60% de las proteínas
+    plasmáticas y es la principal responsable de la presión coloidosmótica. Su déficit
+    (síndrome nefrótico, cirrosis, desnutrición) genera edema por hipoalbuminemia.
+  </div>
+</div>
+
+<div class="fill" data-answers="linfatico|linfático|sistema linfatico|sistema linfático">
+  <p class="stem"><span class="num">C3</span>Cuando el <input type="text" placeholder="..."> se obstruye, las proteínas filtradas al intersticio no pueden retornar a la circulación y se produce linfedema.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: sistema linfático.</strong> Los capilares linfáticos drenan el exceso de
+    líquido intersticial y las proteínas filtradas. Su obstrucción (filariasis, postquirúrgica,
+    tumoral) produce edema rico en proteínas que no responde bien a los diuréticos.
+  </div>
+</div>
+
+<!-- ===================================================================== -->
+<!-- CAPÍTULO 26 -->
+<!-- ===================================================================== -->
+<h2 class="chapter">Capítulo 26 — El sistema urinario y la formación de orina</h2>
+
+<h3 class="section">Opción múltiple</h3>
+
+<div class="question" data-correct="b">
+  <p class="stem"><span class="num">10</span>¿Cuál es la unidad funcional del riñón?</p>
+  <div class="options">
+    <label><input type="radio" name="q10" value="a"> a) El glomérulo</label>
+    <label><input type="radio" name="q10" value="b"> b) La nefrona</label>
+    <label><input type="radio" name="q10" value="c"> c) El túbulo contorneado proximal</label>
+    <label><input type="radio" name="q10" value="d"> d) El asa de Henle</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: b).</strong> La nefrona es la unidad estructural y funcional del riñón.
+    Está compuesta por el corpúsculo renal (glomérulo + cápsula de Bowman) y el sistema tubular
+    (proximal, asa de Henle, distal y conducto colector).
+  </div>
+</div>
+
+<div class="question" data-correct="c">
+  <p class="stem"><span class="num">11</span>¿Cuántas nefronas contiene aproximadamente cada riñón humano?</p>
+  <div class="options">
+    <label><input type="radio" name="q11" value="a"> a) 100 mil</label>
+    <label><input type="radio" name="q11" value="b"> b) 500 mil</label>
+    <label><input type="radio" name="q11" value="c"> c) 1 millón</label>
+    <label><input type="radio" name="q11" value="d"> d) 10 millones</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: c).</strong> Cada riñón contiene entre 800.000 y 1.200.000 nefronas. Este
+    número es fijado al nacer y no se regenera; su pérdida progresiva con la edad o enfermedad
+    reduce la capacidad funcional renal.
+  </div>
+</div>
+
+<div class="question" data-correct="a">
+  <p class="stem"><span class="num">12</span>La formación de orina implica tres procesos básicos: filtración glomerular, reabsorción tubular y:</p>
+  <div class="options">
+    <label><input type="radio" name="q12" value="a"> a) Secreción tubular</label>
+    <label><input type="radio" name="q12" value="b"> b) Difusión simple</label>
+    <label><input type="radio" name="q12" value="c"> c) Pinocitosis</label>
+    <label><input type="radio" name="q12" value="d"> d) Ultrafiltración</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: a).</strong> Los tres procesos renales básicos son: filtración (en el
+    glomérulo), reabsorción (paso de sustancias desde la luz tubular hacia la sangre) y secreción
+    (paso desde los capilares peritubulares hacia la luz tubular). La excreción urinaria resulta
+    de: filtración − reabsorción + secreción.
+  </div>
+</div>
+
+<div class="question" data-correct="d">
+  <p class="stem"><span class="num">13</span>¿Qué porcentaje del gasto cardíaco reciben los riñones en reposo?</p>
+  <div class="options">
+    <label><input type="radio" name="q13" value="a"> a) 5%</label>
+    <label><input type="radio" name="q13" value="b"> b) 10%</label>
+    <label><input type="radio" name="q13" value="c"> c) 50%</label>
+    <label><input type="radio" name="q13" value="d"> d) 22%</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: d).</strong> Los riñones reciben ~1.100 mL/min, equivalente al 22% del
+    gasto cardíaco, aunque solo representan el 0,4% del peso corporal. Este enorme flujo es
+    necesario para mantener una alta TFG y garantizar la depuración plasmática.
+  </div>
+</div>
+
+<div class="question" data-correct="b">
+  <p class="stem"><span class="num">14</span>¿Cuál es la función principal del aparato yuxtaglomerular?</p>
+  <div class="options">
+    <label><input type="radio" name="q14" value="a"> a) Filtrar el plasma</label>
+    <label><input type="radio" name="q14" value="b"> b) Regular la TFG y la presión arterial</label>
+    <label><input type="radio" name="q14" value="c"> c) Reabsorber glucosa</label>
+    <label><input type="radio" name="q14" value="d"> d) Secretar insulina</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: b).</strong> El aparato yuxtaglomerular, formado por la mácula densa, las
+    células yuxtaglomerulares y las mesangiales extraglomerulares, detecta cambios en la
+    concentración de NaCl y en la presión de perfusión, ajustando la resistencia arteriolar y la
+    secreción de renina.
+  </div>
+</div>
+
+<div class="question" data-correct="c">
+  <p class="stem"><span class="num">15</span>Las células yuxtaglomerulares secretan:</p>
+  <div class="options">
+    <label><input type="radio" name="q15" value="a"> a) Aldosterona</label>
+    <label><input type="radio" name="q15" value="b"> b) ADH</label>
+    <label><input type="radio" name="q15" value="c"> c) Renina</label>
+    <label><input type="radio" name="q15" value="d"> d) Eritropoyetina</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: c).</strong> Las células yuxtaglomerulares (modificadas del músculo liso de
+    la arteriola aferente) secretan renina en respuesta a disminución de la presión de perfusión,
+    menor carga de NaCl en la mácula densa o mayor actividad simpática. La renina inicia el
+    sistema renina-angiotensina-aldosterona.
+  </div>
+</div>
+
+<div class="question" data-correct="d">
+  <p class="stem"><span class="num">16</span>¿Qué hormona producida por el riñón estimula la eritropoyesis?</p>
+  <div class="options">
+    <label><input type="radio" name="q16" value="a"> a) Renina</label>
+    <label><input type="radio" name="q16" value="b"> b) Aldosterona</label>
+    <label><input type="radio" name="q16" value="c"> c) Calcitonina</label>
+    <label><input type="radio" name="q16" value="d"> d) Eritropoyetina</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: d).</strong> La eritropoyetina es producida por fibroblastos peritubulares
+    renales en respuesta a hipoxia. Estimula la médula ósea para producir eritrocitos. Su déficit
+    en la enfermedad renal crónica explica la anemia normocítica normocrómica de estos pacientes.
+  </div>
+</div>
+
+<div class="question" data-correct="a">
+  <p class="stem"><span class="num">17</span>Las nefronas yuxtamedulares se caracterizan por:</p>
+  <div class="options">
+    <label><input type="radio" name="q17" value="a"> a) Tener asas de Henle largas que penetran en la médula</label>
+    <label><input type="radio" name="q17" value="b"> b) Estar ubicadas en la corteza superficial</label>
+    <label><input type="radio" name="q17" value="c"> c) Tener asas de Henle cortas</label>
+    <label><input type="radio" name="q17" value="d"> d) No filtrar plasma</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: a).</strong> Las nefronas yuxtamedulares (≈15% del total) tienen glomérulos
+    cercanos a la médula y asas de Henle muy largas que descienden profundamente. Son esenciales
+    para crear el gradiente osmótico medular y concentrar la orina.
+  </div>
+</div>
+
+<div class="question" data-correct="b">
+  <p class="stem"><span class="num">18</span>¿Cuál de las siguientes NO es una función del riñón?</p>
+  <div class="options">
+    <label><input type="radio" name="q18" value="a"> a) Regulación del equilibrio hidroelectrolítico</label>
+    <label><input type="radio" name="q18" value="b"> b) Producción de insulina</label>
+    <label><input type="radio" name="q18" value="c"> c) Regulación del equilibrio ácido-base</label>
+    <label><input type="radio" name="q18" value="d"> d) Regulación de la presión arterial</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: b).</strong> La insulina es producida por las células β del páncreas. El
+    riñón participa en: regulación hidroelectrolítica, ácido-base, presión arterial (vía SRAA),
+    producción de eritropoyetina, activación de vitamina D y gluconeogénesis en ayuno prolongado.
+  </div>
+</div>
+
+<h3 class="section">Completar palabras</h3>
+
+<div class="fill" data-answers="nefrona|la nefrona">
+  <p class="stem"><span class="num">C4</span>La unidad funcional del riñón se denomina <input type="text" placeholder="...">.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: nefrona.</strong> Cada riñón contiene ~1 millón de nefronas. Cada nefrona
+    consta de un corpúsculo renal (glomérulo + cápsula de Bowman) y un sistema tubular.
+  </div>
+</div>
+
+<div class="fill" data-answers="bowman|de bowman|capsula de bowman|cápsula de bowman">
+  <p class="stem"><span class="num">C5</span>El líquido filtrado desde el glomérulo se recoge en la cápsula de <input type="text" placeholder="...">.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: Bowman.</strong> La cápsula de Bowman rodea al glomérulo y recoge el
+    ultrafiltrado plasmático. Este pasa luego al túbulo contorneado proximal para iniciar su
+    procesamiento tubular.
+  </div>
+</div>
+
+<div class="fill" data-answers="yuxtaglomerular|yuxtaglomerular (ayg)|aparato yuxtaglomerular">
+  <p class="stem"><span class="num">C6</span>El aparato <input type="text" placeholder="..."> regula la TFG mediante retroalimentación tubuloglomerular y secreta renina.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: yuxtaglomerular.</strong> Está formado por: células de la mácula densa
+    (túbulo distal), células yuxtaglomerulares (arteriola aferente) y células mesangiales
+    extraglomerulares.
+  </div>
+</div>
+
+<div class="fill" data-answers="eritropoyetina|epo">
+  <p class="stem"><span class="num">C7</span>El riñón produce la hormona <input type="text" placeholder="...">, que estimula la producción de glóbulos rojos por la médula ósea.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: eritropoyetina (EPO).</strong> Producida por fibroblastos peritubulares en
+    respuesta a hipoxia tisular. Su déficit explica la anemia de la enfermedad renal crónica.
+  </div>
+</div>
+
+<div class="fill" data-answers="renina">
+  <p class="stem"><span class="num">C8</span>Las células yuxtaglomerulares secretan <input type="text" placeholder="..."> cuando disminuye la presión de perfusión renal.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: renina.</strong> La renina convierte el angiotensinógeno hepático en
+    angiotensina I, que luego es convertida a angiotensina II por la ECA en los pulmones.
+  </div>
+</div>
+
+<!-- ===================================================================== -->
+<!-- CAPÍTULO 27 -->
+<!-- ===================================================================== -->
+<h2 class="chapter">Capítulo 27 — Filtración glomerular y flujo sanguíneo renal</h2>
+
+<h3 class="section">Opción múltiple</h3>
+
+<div class="question" data-correct="c">
+  <p class="stem"><span class="num">19</span>¿Cuál es el valor normal de la tasa de filtración glomerular (TFG) en un adulto sano?</p>
+  <div class="options">
+    <label><input type="radio" name="q19" value="a"> a) 25 mL/min</label>
+    <label><input type="radio" name="q19" value="b"> b) 75 mL/min</label>
+    <label><input type="radio" name="q19" value="c"> c) 125 mL/min</label>
+    <label><input type="radio" name="q19" value="d"> d) 500 mL/min</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: c).</strong> La TFG normal es de ~125 mL/min (≈180 L/día). Como el volumen
+    plasmático es ~3 L, todo el plasma se filtra unas 60 veces al día, lo que explica la
+    importancia crítica de la reabsorción tubular (más del 99% del filtrado se reabsorbe).
+  </div>
+</div>
+
+<div class="question" data-correct="b">
+  <p class="stem"><span class="num">20</span>La presión neta de filtración glomerular normal es aproximadamente:</p>
+  <div class="options">
+    <label><input type="radio" name="q20" value="a"> a) 60 mmHg</label>
+    <label><input type="radio" name="q20" value="b"> b) 10 mmHg</label>
+    <label><input type="radio" name="q20" value="c"> c) 32 mmHg</label>
+    <label><input type="radio" name="q20" value="d"> d) 100 mmHg</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: b).</strong> PNF = PHG (60) − PCO (32) − PHC (18) = ~10 mmHg, donde PHG es
+    la presión hidrostática glomerular, PCO la coloidosmótica capilar y PHC la hidrostática de la
+    cápsula de Bowman. Pequeños cambios en cualquiera de ellas alteran significativamente la TFG.
+  </div>
+</div>
+
+<div class="question" data-correct="d">
+  <p class="stem"><span class="num">21</span>¿Cuál de los siguientes NO forma parte de la barrera de filtración glomerular?</p>
+  <div class="options">
+    <label><input type="radio" name="q21" value="a"> a) Endotelio capilar fenestrado</label>
+    <label><input type="radio" name="q21" value="b"> b) Membrana basal glomerular</label>
+    <label><input type="radio" name="q21" value="c"> c) Podocitos con diafragmas de filtración</label>
+    <label><input type="radio" name="q21" value="d"> d) Células mesangiales</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: d).</strong> Las células mesangiales tienen función contráctil y de sostén
+    estructural, además de fagocítica, pero no forman parte de la barrera de filtración. Esta
+    última está compuesta por: endotelio fenestrado, membrana basal y podocitos.
+  </div>
+</div>
+
+<div class="question" data-correct="a">
+  <p class="stem"><span class="num">22</span>La fracción de filtración normal es aproximadamente:</p>
+  <div class="options">
+    <label><input type="radio" name="q22" value="a"> a) 20%</label>
+    <label><input type="radio" name="q22" value="b"> b) 50%</label>
+    <label><input type="radio" name="q22" value="c"> c) 5%</label>
+    <label><input type="radio" name="q22" value="d"> d) 80%</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: a).</strong> La fracción de filtración = TFG / flujo plasmático renal =
+    125 / 650 ≈ 0,20 (20%). Es decir, del plasma que pasa por el glomérulo, solo el 20% se filtra;
+    el 80% restante continúa hacia los capilares peritubulares.
+  </div>
+</div>
+
+<div class="question" data-correct="b">
+  <p class="stem"><span class="num">23</span>¿Qué sustancia se utiliza clínicamente para estimar la TFG?</p>
+  <div class="options">
+    <label><input type="radio" name="q23" value="a"> a) Glucosa</label>
+    <label><input type="radio" name="q23" value="b"> b) Creatinina</label>
+    <label><input type="radio" name="q23" value="c"> c) Urea</label>
+    <label><input type="radio" name="q23" value="d"> d) Ácido úrico</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: b).</strong> La creatinina se filtra libremente y se secreta en pequeña
+    cantidad, por lo que su depuración aproxima bien la TFG. La inulina es el estándar de oro,
+    pero su uso es de investigación. La urea se reabsorbe parcialmente y por eso es menos fiable.
+  </div>
+</div>
+
+<div class="question" data-correct="d">
+  <p class="stem"><span class="num">24</span>La autorregulación renal mantiene la TFG constante entre presiones arteriales de:</p>
+  <div class="options">
+    <label><input type="radio" name="q24" value="a"> a) 40-80 mmHg</label>
+    <label><input type="radio" name="q24" value="b"> b) 20-60 mmHg</label>
+    <label><input type="radio" name="q24" value="c"> c) 180-220 mmHg</label>
+    <label><input type="radio" name="q24" value="d"> d) 80-180 mmHg</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: d).</strong> Entre 80 y 180 mmHg de presión arterial media, mecanismos
+    miogénicos (respuesta contráctil al estiramiento) y de retroalimentación tubuloglomerular
+    mantienen la TFG relativamente constante. Fuera de este rango, la TFG varía linealmente con
+    la presión.
+  </div>
+</div>
+
+<div class="question" data-correct="c">
+  <p class="stem"><span class="num">25</span>En la retroalimentación tubuloglomerular, la mácula densa detecta principalmente:</p>
+  <div class="options">
+    <label><input type="radio" name="q25" value="a"> a) La presión arterial sistémica</label>
+    <label><input type="radio" name="q25" value="b"> b) La concentración de glucosa en el túbulo</label>
+    <label><input type="radio" name="q25" value="c"> c) La concentración de NaCl en el túbulo distal</label>
+    <label><input type="radio" name="q25" value="d"> d) El pH sanguíneo</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: c).</strong> La mácula densa (porción especializada del túbulo distal) es
+    sensible a la concentración de NaCl. Cuando aumenta el NaCl (por aumento de TFG), se libera
+    adenosina y ATP que producen vasoconstricción de la arteriola aferente, reduciendo la TFG.
+  </div>
+</div>
+
+<div class="question" data-correct="a">
+  <p class="stem"><span class="num">26</span>¿Qué efecto tiene la vasoconstricción de la arteriola aferente sobre la TFG?</p>
+  <div class="options">
+    <label><input type="radio" name="q26" value="a"> a) Disminuye la TFG</label>
+    <label><input type="radio" name="q26" value="b"> b) Aumenta la TFG</label>
+    <label><input type="radio" name="q26" value="c"> c) No afecta la TFG</label>
+    <label><input type="radio" name="q26" value="d"> d) Aumenta el flujo plasmático renal</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: a).</strong> Al contraerse la arteriola aferente, disminuye la presión
+    hidrostática en el capilar glomerular, reduciendo la PNF y por ende la TFG. Es el mecanismo
+    clave durante la estimulación simpática intensa o en la retroalimentación tubuloglomerular.
+  </div>
+</div>
+
+<div class="question" data-correct="b">
+  <p class="stem"><span class="num">27</span>La angiotensina II, en dosis fisiológicas, produce preferentemente:</p>
+  <div class="options">
+    <label><input type="radio" name="q27" value="a"> a) Vasodilatación de la arteriola aferente</label>
+    <label><input type="radio" name="q27" value="b"> b) Vasoconstricción de la arteriola eferente</label>
+    <label><input type="radio" name="q27" value="c"> c) Vasodilatación de la arteriola eferente</label>
+    <label><input type="radio" name="q27" value="d"> d) No tiene efecto sobre las arteriolas</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: b).</strong> La angiotensina II contrae preferentemente la arteriola
+    eferente, lo que eleva la presión hidrostática glomerular y ayuda a mantener la TFG en
+    situaciones de hipoperfusión. También estimula la reabsorción de Na⁺ y la secreción de
+    aldosterona.
+  </div>
+</div>
+
+<h3 class="section">Completar palabras</h3>
+
+<div class="fill" data-answers="125|125 ml/min|125ml/min">
+  <p class="stem"><span class="num">C9</span>La tasa de filtración glomerular normal en un adulto sano es de aproximadamente <input type="text" placeholder="..."> mL/min.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: 125.</strong> La TFG normal es de ~125 mL/min (≈180 L/día). Solo el 1% de
+    este filtrado se excreta como orina; el 99% se reabsorbe en los túbulos.
+  </div>
+</div>
+
+<div class="fill" data-answers="inulina">
+  <p class="stem"><span class="num">C10</span>El estándar de oro para medir la TFG es la depuración de <input type="text" placeholder="...">.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: inulina.</strong> La inulina se filtra libremente, no se reabsorbe, no se
+    secreta y no se une a proteínas. Su depuración es exactamente igual a la TFG. En la práctica
+    clínica se usa la creatinina por su sencillez.
+  </div>
+</div>
+
+<div class="fill" data-answers="coloidosmotica|coloidosmótica|presion coloidosmotica|presión coloidosmótica|presion coloidosmotica">
+  <p class="stem"><span class="num">C11</span>La <input type="text" placeholder="..."> del plasma es la principal fuerza que se opone a la filtración glomerular.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: presión coloidosmótica.</strong> Ejercida por las proteínas plasmáticas
+    (sobre todo la albúmina) en el capilar glomerular, se opone a la filtración con un valor de
+    ~32 mmHg. En el capilar peritubular, en cambio, favorece la reabsorción.
+  </div>
+</div>
+
+<div class="fill" data-answers="membrana basal|membrana basal glomerular|lamina basal">
+  <p class="stem"><span class="num">C12</span>La barrera de filtración glomerular está formada por el endotelio fenestrado, la <input type="text" placeholder="..."> y los podocitos.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: membrana basal.</strong> La barrera tiene tres capas: endotelio fenestrado
+    (retiene células), membrana basal (retiene proteínas grandes) y diafragmas de filtración
+    entre los pedicelos de los podocitos (retienen proteínas medianas).
+  </div>
+</div>
+
+<div class="fill" data-answers="mácula densa|macula densa">
+  <p class="stem"><span class="num">C13</span>La <input type="text" placeholder="..."> es la estructura tubular distal que detecta la concentración de NaCl y regula la retroalimentación tubuloglomerular.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: mácula densa.</strong> Es un grupo especializado de células del túbulo
+    distal que, al detectar un aumento de NaCl, libera adenosina/ATP y produce vasoconstricción
+    de la arteriola aferente, reduciendo la TFG.
+  </div>
+</div>
+
+<div class="fill" data-answers="eferente">
+  <p class="stem"><span class="num">C14</span>La angiotensina II contrae preferentemente la arteriola <input type="text" placeholder="...">, manteniendo la TFG en situaciones de hipoperfusión.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: eferente.</strong> La vasoconstricción eferente eleva la presión
+    hidrostática glomerular y preserva la TFG, aunque reduce el flujo plasmático renal. Por eso
+    los IECAs y ARA II pueden reducir la TFG en pacientes con estenosis bilateral de arteria renal.
+  </div>
+</div>
+
+<!-- ===================================================================== -->
+<!-- CAPÍTULO 28 -->
+<!-- ===================================================================== -->
+<h2 class="chapter">Capítulo 28 — Reabsorción y secreción tubular</h2>
+
+<h3 class="section">Opción múltiple</h3>
+
+<div class="question" data-correct="c">
+  <p class="stem"><span class="num">28</span>¿Qué porcentaje del filtrado glomerular se reabsorbe en el túbulo contorneado proximal?</p>
+  <div class="options">
+    <label><input type="radio" name="q28" value="a"> a) 25%</label>
+    <label><input type="radio" name="q28" value="b"> b) 45%</label>
+    <label><input type="radio" name="q28" value="c"> c) 65%</label>
+    <label><input type="radio" name="q28" value="d"> d) 90%</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: c).</strong> El túbulo proximal reabsorbe ~65% del Na⁺ y del agua filtrados,
+    además de prácticamente toda la glucosa y los aminoácidos. Su borde en cepillo y abundantes
+    mitocondrias le permiten un transporte activo muy eficiente.
+  </div>
+</div>
+
+<div class="question" data-correct="d">
+  <p class="stem"><span class="num">29</span>La bomba que mantiene el gradiente de sodio en las células tubulares es:</p>
+  <div class="options">
+    <label><input type="radio" name="q29" value="a"> a) Bomba de protones H⁺/K⁺-ATPasa</label>
+    <label><input type="radio" name="q29" value="b"> b) Bomba de calcio Ca²⁺-ATPasa</label>
+    <label><input type="radio" name="q29" value="c"> c) Cotransportador Na⁺/glucosa</label>
+    <label><input type="radio" name="q29" value="d"> d) Na⁺/K⁺-ATPasa basolateral</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: d).</strong> La Na⁺/K⁺-ATPasa en la membrana basolateral expulsa 3 Na⁺ y
+    introduce 2 K⁺ por cada ATP hidrolizado. Este transporte activo primario crea el gradiente
+    electroquímico que impulsa la reabsorción de Na⁺ en el lado luminal.
+  </div>
+</div>
+
+<div class="question" data-correct="a">
+  <p class="stem"><span class="num">30</span>La glucosa se reabsorbe en el túbulo proximal principalmente mediante:</p>
+  <div class="options">
+    <label><input type="radio" name="q30" value="a"> a) Cotransporte con Na⁺ (SGLT)</label>
+    <label><input type="radio" name="q30" value="b"> b) Difusión simple</label>
+    <label><input type="radio" name="q30" value="c"> c) Transporte activo primario</label>
+    <label><input type="radio" name="q30" value="d"> d) Pinocitosis</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: a).</strong> La glucosa se reabsorbe por cotransporte con Na⁺ a través de
+    SGLT2 (segmento S1) y SGLT1 (S2/S3). Luego sale por GLUT2/GLUT1 en la membrana basolateral.
+    Es un transporte activo secundario, impulsado por el gradiente de Na⁺.
+  </div>
+</div>
+
+<div class="question" data-correct="b">
+  <p class="stem"><span class="num">31</span>El transporte máximo (Tm) de glucosa en el riñón humano es aproximadamente:</p>
+  <div class="options">
+    <label><input type="radio" name="q31" value="a"> a) 100 mg/min</label>
+    <label><input type="radio" name="q31" value="b"> b) 375 mg/min</label>
+    <label><input type="radio" name="q31" value="c"> c) 600 mg/min</label>
+    <label><input type="radio" name="q31" value="d"> d) 1000 mg/min</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: b).</strong> El Tm de la glucosa es de ~375 mg/min en el varón y ~300 mg/min
+    en la mujer. Cuando la carga filtrada supera este valor (glucemia &gt;180 mg/dL), aparece
+    glucosuria —umbral renal de la glucosa.
+  </div>
+</div>
+
+<div class="question" data-correct="c">
+  <p class="stem"><span class="num">32</span>La hormona antidiurética (ADH) actúa principalmente sobre:</p>
+  <div class="options">
+    <label><input type="radio" name="q32" value="a"> a) El túbulo contorneado proximal</label>
+    <label><input type="radio" name="q32" value="b"> b) La porción descendente del asa de Henle</label>
+    <label><input type="radio" name="q32" value="c"> c) Los conductos colectores</label>
+    <label><input type="radio" name="q32" value="d"> d) El glomérulo</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: c).</strong> La ADH (vasopresina), secretada por la neurohipófisis, actúa
+    sobre receptores V2 de las células principales del conducto colector. Induce la inserción de
+    acuaporina-2 en la membrana apical, permitiendo la reabsorción de agua y concentrando la orina.
+  </div>
+</div>
+
+<div class="question" data-correct="a">
+  <p class="stem"><span class="num">33</span>La aldosterona aumenta principalmente la reabsorción de:</p>
+  <div class="options">
+    <label><input type="radio" name="q33" value="a"> a) Sodio y la secreción de potasio</label>
+    <label><input type="radio" name="q33" value="b"> b) Glucosa y aminoácidos</label>
+    <label><input type="radio" name="q33" value="c"> c) Calcio y fosfato</label>
+    <label><input type="radio" name="q33" value="d"> d) Solo agua</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: a).</strong> La aldosterona, secretada por la corteza suprarrenal, actúa
+    sobre las células principales del túbulo distal y conducto colector: aumenta la reabsorción
+    de Na⁺ (vía ENaC) y la secreción de K⁺ (vía ROMK), además de estimular la secreción de H⁺ por
+    las células intercaladas.
+  </div>
+</div>
+
+<div class="question" data-correct="d">
+  <p class="stem"><span class="num">34</span>La porción ascendente gruesa del asa de Henle es impermeable a:</p>
+  <div class="options">
+    <label><input type="radio" name="q34" value="a"> a) Sodio</label>
+    <label><input type="radio" name="q34" value="b"> b) Cloro</label>
+    <label><input type="radio" name="q34" value="c"> c) Potasio</label>
+    <label><input type="radio" name="q34" value="d"> d) Agua</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: d).</strong> La rama ascendente gruesa es impermeable al agua, pero
+    reabsorbe activamente Na⁺, K⁺ y Cl⁻ a través del cotransportador Na⁺-K⁺-2Cl⁻ (NKCC2). Por
+    eso el líquido tubular se diluye, mientras el intersticio medular se concentra.
+  </div>
+</div>
+
+<div class="question" data-correct="b">
+  <p class="stem"><span class="num">35</span>La secreción tubular de H⁺ es fundamental para:</p>
+  <div class="options">
+    <label><input type="radio" name="q35" value="a"> a) Regular la glucemia</label>
+    <label><input type="radio" name="q35" value="b"> b) Regular el equilibrio ácido-base</label>
+    <label><input type="radio" name="q35" value="c"> c) Regular el calcio sérico</label>
+    <label><input type="radio" name="q35" value="d"> d) Regular el hierro</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: b).</strong> El riñón regula el pH mediante: secreción de H⁺ en el túbulo
+    proximal (contratransporte Na⁺/H⁺), reabsorción de HCO₃⁻, producción de amonio y excreción de
+    ácidos titulables (fosfato).
+  </div>
+</div>
+
+<div class="question" data-correct="c">
+  <p class="stem"><span class="num">36</span>¿Cuál de las siguientes sustancias es secretada activamente en el túbulo proximal?</p>
+  <div class="options">
+    <label><input type="radio" name="q36" value="a"> a) Glucosa</label>
+    <label><input type="radio" name="q36" value="b"> b) Aminoácidos</label>
+    <label><input type="radio" name="q36" value="c"> c) Penicilina y ácido paraaminohipúrico (PAH)</label>
+    <label><input type="radio" name="q36" value="d"> d) Albúmina</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: c).</strong> El túbulo proximal secreta activamente ácidos orgánicos
+    (PAH, penicilina, salicilatos) y bases orgánicas (morfina, quinina), además de H⁺, K⁺ y
+    amonio. La glucosa y los aminoácidos, en cambio, se reabsorben.
+  </div>
+</div>
+
+<div class="question" data-correct="a">
+  <p class="stem"><span class="num">37</span>La reabsorción de agua en el túbulo proximal ocurre principalmente por:</p>
+  <div class="options">
+    <label><input type="radio" name="q37" value="a"> a) Ósmosis acoplada a la reabsorción de solutos</label>
+    <label><input type="radio" name="q37" value="b"> b) Transporte activo primario</label>
+    <label><input type="radio" name="q37" value="c"> c) Endocitosis</label>
+    <label><input type="radio" name="q37" value="d"> d) Cotransporte con glucosa</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: a).</strong> La reabsorción de Na⁺ y otros solutos crea un gradiente
+    osmótico que arrastra el agua a través de acuaporina-1 (isosmótica). Por eso el líquido que
+    sale del túbulo proximal es isosmótico respecto al plasma.
+  </div>
+</div>
+
+<div class="question" data-correct="d">
+  <p class="stem"><span class="num">38</span>El sistema de contracorriente renal es esencial para:</p>
+  <div class="options">
+    <label><input type="radio" name="q38" value="a"> a) Filtrar proteínas</label>
+    <label><input type="radio" name="q38" value="b"> b) Secretar potasio</label>
+    <label><input type="radio" name="q38" value="c"> c) Regular la glucemia</label>
+    <label><input type="radio" name="q38" value="d"> d) Concentrar o diluir la orina</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: d).</strong> El sistema multiplicador de contracorriente (asas de Henle
+    largas + vasa recta) crea un gradiente osmótico medular de hasta 1.200 mOsm/L, permitiendo
+    concentrar la orina cuando hay ADH.
+  </div>
+</div>
+
+<div class="question" data-correct="b">
+  <p class="stem"><span class="num">39</span>¿Qué segmento tubular es el principal responsable de la secreción de potasio regulada por aldosterona?</p>
+  <div class="options">
+    <label><input type="radio" name="q39" value="a"> a) Túbulo proximal</label>
+    <label><input type="radio" name="q39" value="b"> b) Túbulo distal y conducto colector</label>
+    <label><input type="radio" name="q39" value="c"> c) Asa ascendente delgada</label>
+    <label><input type="radio" name="q39" value="d"> d) Glomérulo</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: b).</strong> Las células principales del túbulo distal y del conducto
+    colector secretan K⁺ hacia la luz tubular. Este proceso es estimulado por aldosterona, por
+    alto flujo tubular y por alta concentración de K⁺ sérico.
+  </div>
+</div>
+
+<div class="question" data-correct="c">
+  <p class="stem"><span class="num">40</span>La reabsorción de bicarbonato en el túbulo proximal es indispensable para:</p>
+  <div class="options">
+    <label><input type="radio" name="q40" value="a"> a) Eliminar el exceso de bases</label>
+    <label><input type="radio" name="q40" value="b"> b) Producir glucosa</label>
+    <label><input type="radio" name="q40" value="c"> c) Recuperar el principal amortiguador plasmático</label>
+    <label><input type="radio" name="q40" value="d"> d) Aumentar la diuresis</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: c).</strong> El HCO₃⁻ filtrado se reabsorbe en el túbulo proximal en forma
+    indirecta: se combina con H⁺ secretado formando H₂CO₃, que se disocia en CO₂ y H₂O. El CO₂
+    difunde a la célula y se regenera HCO₃⁻. Se recupera así el principal amortiguador del plasma.
+  </div>
+</div>
+
+<h3 class="section">Completar palabras</h3>
+
+<div class="fill" data-answers="proximal|tubulo proximal|túbulo proximal|contorneado proximal|tubulo contorneado proximal|túbulo contorneado proximal">
+  <p class="stem"><span class="num">C15</span>El <input type="text" placeholder="..."> es el segmento tubular donde se reabsorbe ~65% del agua y del sodio filtrados.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: túbulo proximal.</strong> Posee borde en cepillo (microvellosidades) y
+    abundantes mitocondrias que aportan ATP para la reabsorción activa. Reabsorbe además toda la
+    glucosa y los aminoácidos filtrados.
+  </div>
+</div>
+
+<div class="fill" data-answers="na+/k+ atpasa|na/k atpasa|sodio-potasio atpasa|bomba de sodio y potasio|bomba na+/k+ atpasa">
+  <p class="stem"><span class="num">C16</span>La <input type="text" placeholder="..."> basolateral expulsa 3 Na⁺ e introduce 2 K⁺, manteniendo el gradiente necesario para la reabsorción tubular.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: Na⁺/K⁺-ATPasa.</strong> Es la principal consumidora de ATP en el riñón
+    (~6% del consumo total de oxígeno corporal). Crea el gradiente que impulsa el transporte
+    activo secundario (cotransporte y contratransporte) en la membrana luminal.
+  </div>
+</div>
+
+<div class="fill" data-answers="glucosa">
+  <p class="stem"><span class="num">C17</span>El cotransportador SGLT2 reabsorbe <input type="text" placeholder="..."> junto con sodio en el túbulo proximal.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: glucosa.</strong> SGLT2 (segmento S1) y SGLT1 (S2/S3) reabsorben glucosa
+    por cotransporte con Na⁺. Su inhibición farmacológica (gliflozinas) produce glucosuria
+    terapéutica en la diabetes mellitus tipo 2.
+  </div>
+</div>
+
+<div class="fill" data-answers="glucosuria|glucosuria (glucosa en orina)|glucosa en orina">
+  <p class="stem"><span class="num">C18</span>Cuando la glucemia supera el umbral renal (~180 mg/dL), aparece <input type="text" placeholder="..."> por saturación de los transportadores SGLT.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: glucosuria.</strong> Al superarse el transporte máximo (Tm ≈ 375 mg/min),
+    la glucosa filtrada no puede reabsorberse completamente y aparece en la orina, arrastrando
+    agua por efecto osmótico (diuresis osmótica).
+  </div>
+</div>
+
+<div class="fill" data-answers="aldosterona">
+  <p class="stem"><span class="num">C19</span>La <input type="text" placeholder="...">, secretada por la corteza suprarrenal, aumenta la reabsorción de Na⁺ y la secreción de K⁺ en el túbulo distal y conducto colector.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: aldosterona.</strong> Actúa sobre las células principales aumentando la
+    expresión de canales ENaC (apical) y de la Na⁺/K⁺-ATPasa (basolateral). Su exceso causa
+    hipertensión e hipokalemia; su déficit (Addison) provoca hipotensión e hiperkalemia.
+  </div>
+</div>
+
+<div class="fill" data-answers="ad|adh|hormona antidiuretica|hormona antidiurética|vasopresina">
+  <p class="stem"><span class="num">C20</span>La <input type="text" placeholder="..."> actúa sobre receptores V2 del conducto colector, promoviendo la inserción de acuaporina-2 y la reabsorción de agua.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: ADH (vasopresina).</strong> Secretada por la neurohipófisis en respuesta
+    a hiperosmolaridad plasmática o hipovolemia. Su déficit causa diabetes insípida central;
+    su exceso inapropiado causa SIADH con hiponatremia dilucional.
+  </div>
+</div>
+
+<div class="fill" data-answers="ascendente|rama ascendente|porcion ascendente|porción ascendente|asa ascendente">
+  <p class="stem"><span class="num">C21</span>La rama <input type="text" placeholder="..."> gruesa del asa de Henle es impermeable al agua pero reabsorbe Na⁺, K⁺ y Cl⁻ mediante el cotransportador NKCC2.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: ascendente.</strong> Por ser impermeable al agua, diluye el líquido
+    tubular (segmento dilutor) y contribuye a la hiperosmolaridad medular. Es el sitio de acción
+    de los diuréticos de asa (furosemida).
+  </div>
+</div>
+
+<div class="fill" data-answers="contracorriente|multiplicador de contracorriente">
+  <p class="stem"><span class="num">C22</span>El mecanismo de <input type="text" placeholder="..."> permite crear un gradiente osmótico medular de hasta 1.200 mOsm/L.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: contracorriente.</strong> El sistema multiplicador de contracorriente
+    combina el flujo en direcciones opuestas en las ramas del asa de Henle con las propiedades
+    de permeabilidad diferencial, generando el gradiente que permite concentrar la orina.
+  </div>
+</div>
+
+<div class="fill" data-answers="secrecion|secreción|secrecion tubular|secreción tubular">
+  <p class="stem"><span class="num">C23</span>El paso de sustancias desde los capilares peritubulares hacia la luz tubular se denomina <input type="text" placeholder="..."> tubular.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: secreción.</strong> Es el tercer proceso básico de la formación de orina
+    (junto a filtración y reabsorción). Permite eliminar fármacos, H⁺, K⁺, amonio y ácidos
+    orgánicos. La excreción = filtración − reabsorción + secreción.
+  </div>
+</div>
+
+<div class="fill" data-answers="bicarbonato|hco3|hco3-">
+  <p class="stem"><span class="num">C24</span>En el túbulo proximal, el <input type="text" placeholder="..."> filtrado se recupera indirectamente gracias a la secreción de H⁺ y a la acción de la anhidrasa carbónica.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: bicarbonato (HCO₃⁻).</strong> El H⁺ secretado se combina con el HCO₃⁻
+    filtrado formando H₂CO₃, que se disocia en CO₂ y H₂O por acción de la anhidrasa carbónica.
+    El CO₂ entra a la célula y regenera HCO₃⁻, que vuelve a la sangre.
+  </div>
+</div>
+
+<div class="fill" data-answers="potasio|k+|k">
+  <p class="stem"><span class="num">C25</span>La aldosterona estimula la secreción de <input type="text" placeholder="..."> en el túbulo distal y conducto colector, mediante canales ROMK.</p>
+  <div class="fill-actions">
+    <button type="button" class="btn-check">Verificar</button>
+    <button type="button" class="btn-reveal">Mostrar respuesta</button>
+  </div>
+  <div class="explanation">
+    <strong>Respuesta: potasio (K⁺).</strong> Las células principales secretan K⁺ hacia la luz
+    tubular a favor del gradiente electroquímico creado por la reabsorción de Na⁺. La aldosterona
+    aumenta la expresión de ENaC y ROMK, favoreciendo la eliminación de K⁺.
+  </div>
+</div>
+
+<!-- ===================================================================== -->
+<!-- CASOS CLÍNICOS -->
+<!-- ===================================================================== -->
+<h2 class="chapter">Casos clínicos integradores</h2>
+
+<div class="case" data-correct="a">
+  <h4>Caso clínico 1 — Insuficiencia cardíaca congestiva</h4>
+  <p>Varón de 68 años con disnea, edema simétrico en miembros inferiores, ingurgitación yugular y hepatomegalia. ¿Cuál es el mecanismo principal del edema?</p>
+  <div class="options">
+    <label><input type="radio" name="c1" value="a"> a) Aumento de la presión hidrostática venosa capilar</label>
+    <label><input type="radio" name="c1" value="b"> b) Obstrucción linfática</label>
+    <label><input type="radio" name="c1" value="c"> c) Descenso de la presión oncótica</label>
+    <label><input type="radio" name="c1" value="d"> d) Aumento de la permeabilidad capilar</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: a).</strong> La reducción del gasto cardíaco eleva la presión venosa
+    sistémica, incrementando la presión hidrostática capilar y favoreciendo la salida de líquido
+    al intersticio. Además, la hipoperfusión renal activa el SRAA, reteniendo Na⁺ y agua.
+  </div>
+</div>
+
+<div class="case" data-correct="b">
+  <h4>Caso clínico 2 — Síndrome nefrótico</h4>
+  <p>Niña de 7 años con proteinuria &gt;3,5 g/día, hipoalbuminemia y edema generalizado con predominio periorbitario matutino. ¿Mecanismo principal?</p>
+  <div class="options">
+    <label><input type="radio" name="c2" value="a"> a) Aumento de la presión hidrostática</label>
+    <label><input type="radio" name="c2" value="b"> b) Hipoalbuminemia con descenso de la presión coloidosmótica</label>
+    <label><input type="radio" name="c2" value="c"> c) Obstrucción linfática</label>
+    <label><input type="radio" name="c2" value="d"> d) Aumento de la reabsorción tubular</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: b).</strong> La pérdida urinaria masiva de proteínas reduce la albúmina
+    plasmática, disminuyendo la presión coloidosmótica y provocando paso de líquido al
+    intersticio. El edema periorbitario es característico por la laxitud del tejido subcutáneo.
+  </div>
+</div>
+
+<div class="case" data-correct="c">
+  <h4>Caso clínico 3 — Diabetes insípida central</h4>
+  <p>Mujer de 32 años con poliuria, polidipsia y deshidratación. Se confirma déficit de ADH. ¿Qué tipo de orina se esperaría?</p>
+  <div class="options">
+    <label><input type="radio" name="c3" value="a"> a) Orina concentrada</label>
+    <label><input type="radio" name="c3" value="b"> b) Anuria</label>
+    <label><input type="radio" name="c3" value="c"> c) Orina muy diluida</label>
+    <label><input type="radio" name="c3" value="d"> d) Hematuria</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: c).</strong> Sin ADH, los conductos colectores son impermeables al agua.
+    No hay reabsorción de agua libre, por lo que se eliminan grandes volúmenes de orina diluida
+    (osmolaridad &lt; 200 mOsm/L), con riesgo de hipernatremia si no se repone agua.
+  </div>
+</div>
+
+<div class="case" data-correct="b">
+  <h4>Caso clínico 4 — Diabetes mellitus descompensada</h4>
+  <p>Varón de 22 años con glucemia de 480 mg/dL, poliuria y deshidratación. ¿Cuál es la causa de la glucosuria?</p>
+  <div class="options">
+    <label><input type="radio" name="c4" value="a"> a) Aumento de la secreción tubular de glucosa</label>
+    <label><input type="radio" name="c4" value="b"> b) Superación del transporte máximo (Tm) de glucosa</label>
+    <label><input type="radio" name="c4" value="c"> c) Disminución de la TFG</label>
+    <label><input type="radio" name="c4" value="d"> d) Bloqueo del cotransportador SGLT2</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: b).</strong> Cuando la carga filtrada de glucosa supera el Tm (~375 mg/min),
+    los transportadores SGLT se saturan y la glucosa aparece en la orina. La glucosuria arrastra
+    agua por efecto osmótico (diuresis osmótica), causando poliuria y deshidratación.
+  </div>
+</div>
+
+<div class="case" data-correct="b">
+  <h4>Caso clínico 5 — Estenosis de la arteria renal</h4>
+  <p>Paciente de 55 años con hipertensión resistente. Se detecta estenosis de la arteria renal derecha. ¿Qué mecanismo explica la hipertensión?</p>
+  <div class="options">
+    <label><input type="radio" name="c5" value="a"> a) Disminución de la secreción de renina</label>
+    <label><input type="radio" name="c5" value="b"> b) Activación del sistema renina-angiotensina-aldosterona</label>
+    <label><input type="radio" name="c5" value="c"> c) Aumento del péptido natriurético auricular</label>
+    <label><input type="radio" name="c5" value="d"> d) Exceso de ADH</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: b).</strong> La estenosis reduce la presión de perfusión renal, lo que
+    estimula la secreción de renina. Esto activa el SRAA, elevando angiotensina II (vasoconstrictor)
+    y aldosterona (retención de Na⁺ y agua), produciendo hipertensión arterial.
+  </div>
+</div>
+
+<div class="case" data-correct="a">
+  <h4>Caso clínico 6 — SIADH (secreción inapropiada de ADH)</h4>
+  <p>Paciente con carcinoma pulmonar de células pequeñas presenta hiponatremia dilucional, sin edema y con orina inapropiadamente concentrada. ¿Mecanismo?</p>
+  <div class="options">
+    <label><input type="radio" name="c6" value="a"> a) Exceso de ADH con retención de agua libre</label>
+    <label><input type="radio" name="c6" value="b"> b) Déficit de aldosterona</label>
+    <label><input type="radio" name="c6" value="c"> c) Diuresis osmótica</label>
+    <label><input type="radio" name="c6" value="d"> d) Insuficiencia renal aguda</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: a).</strong> El exceso de ADH aumenta la permeabilidad al agua en el
+    conducto colector, provocando retención de agua libre, expansión del volumen e hiponatremia
+    dilucional. La orina permanece concentrada a pesar de la hipoosmolaridad plasmática.
+  </div>
+</div>
+
+<div class="case" data-correct="b">
+  <h4>Caso clínico 7 — Enfermedad de Addison</h4>
+  <p>Mujer de 45 años con astenia, hipotensión, hiperkalemia e hiponatremia. ¿Qué alteración explica estos hallazgos?</p>
+  <div class="options">
+    <label><input type="radio" name="c7" value="a"> a) Exceso de aldosterona</label>
+    <label><input type="radio" name="c7" value="b"> b) Déficit de aldosterona</label>
+    <label><input type="radio" name="c7" value="c"> c) Exceso de ADH</label>
+    <label><input type="radio" name="c7" value="d"> d) Exceso de cortisol</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: b).</strong> La enfermedad de Addison destruye la corteza suprarrenal,
+    provocando déficit de aldosterona. Sin aldosterona, se pierde Na⁺ y se retiene K⁺, causando
+    hiponatremia, hiperkalemia, hipotensión y acidosis metabólica.
+  </div>
+</div>
+
+<div class="case" data-correct="b">
+  <h4>Caso clínico 8 — Diuréticos de asa</h4>
+  <p>Paciente con edema agudo de pulmón recibe furosemida intravenosa, con diuresis abundante. ¿Cuál es el sitio y mecanismo de acción de este fármaco?</p>
+  <div class="options">
+    <label><input type="radio" name="c8" value="a"> a) Inhibe la anhidrasa carbónica en el túbulo proximal</label>
+    <label><input type="radio" name="c8" value="b"> b) Inhibe el cotransportador Na⁺-K⁺-2Cl⁻ en la rama ascendente gruesa</label>
+    <label><input type="radio" name="c8" value="c"> c) Antagoniza la aldosterona en el conducto colector</label>
+    <label><input type="radio" name="c8" value="d"> d) Bloquea la ADH en el conducto colector</label>
+  </div>
+  <div class="explanation">
+    <strong>Correcta: b).</strong> La furosemida inhibe el cotransportador NKCC2 en la rama
+    ascendente gruesa del asa de Henle, impidiendo la reabsorción de Na⁺, K⁺ y Cl⁻. Esto reduce
+    el gradiente medular y produce una diuresis intensa, además de pérdida de K⁺ y alcalosis
+    metabólica.
+  </div>
+</div>
+
+<footer>
+  Material de estudio basado en <em>Guyton y Hall — Tratado de Fisiología Médica</em>,
+  capítulos 25 a 28. Uso académico.
+</footer>
+
+</div>
+
+<script>
+  /* ---------- OPCIÓN MÚLTIPLE Y CASOS ---------- */
+  document.querySelectorAll('.question, .case').forEach(function (block) {
+    const correct = block.dataset.correct;
+    const inputs  = block.querySelectorAll('input[type="radio"]');
+    const explanation = block.querySelector('.explanation');
+
+    inputs.forEach(function (input) {
+      input.addEventListener('change', function () {
+        inputs.forEach(function (i) {
+          const label = i.closest('label');
+          label.classList.remove('correct', 'incorrect');
+          if (i.value === correct) label.classList.add('correct');
+          if (i.checked && i.value !== correct) label.classList.add('incorrect');
+        });
+        if (explanation) explanation.classList.add('show');
+      });
+    });
+  });
+
+  /* ---------- COMPLETAR PALABRAS ---------- */
+  function normalize(str) {
+    return str
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[.,;:¡!¿?()]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  document.querySelectorAll('.fill').forEach(function (block) {
+    const rawAnswers = (block.dataset.answers || '').split('|').map(normalize);
+    const inputs = block.querySelectorAll('input[type="text"]');
+    const explanation = block.querySelector('.explanation');
+    const btnCheck  = block.querySelector('.btn-check');
+    const btnReveal = block.querySelector('.btn-reveal');
+
+    if (btnCheck) {
+      btnCheck.addEventListener('click', function () {
+        inputs.forEach(function (input) {
+          const val = normalize(input.value);
+          input.classList.remove('correct', 'incorrect');
+          if (val === '') return;
+          if (rawAnswers.indexOf(val) !== -1) {
+            input.classList.add('correct');
+          } else {
+            input.classList.add('incorrect');
+          }
+        });
+        if (explanation) explanation.classList.add('show');
+      });
+    }
+
+    if (btnReveal) {
+      btnReveal.addEventListener('click', function () {
+        inputs.forEach(function (input) {
+          input.classList.remove('incorrect');
+          input.classList.add('correct');
+        });
+        if (explanation) explanation.classList.add('show');
+      });
+    }
+  });
+</script>
+</body>
+</html>
